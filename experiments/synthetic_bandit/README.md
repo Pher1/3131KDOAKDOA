@@ -95,6 +95,7 @@ The quantitative results of this comparison are summarized in the table below:
 | **Seed 2** | 0.49 / [0.42, 0.57] | 0.51 / [0.43, 0.60] | 0.51 / [0.46, 0.56] | 0.81 / [0.77, 0.84] | 0.82 / [0.78, 0.85] |
 | **Seed 3** | 0.45 / [0.39, 0.51] | 0.98 / [0.94, 1.01] | 0.34 / [0.27, 0.41] | 0.14 / [0.12, 0.16] | 0.16 / [0.14, 0.18] |
 | **Seed 4** | 0.52 / [0.44, 0.60] | 0.54 / [0.42, 0.65] | 0.50 / [0.42, 0.59] | 0.77 / [0.74, 0.79] | 0.72 / [0.70, 0.75] |
+
 *(Note: Values are reported as Mean / 95% CI [Lower, Upper])*
 
 ### Reproducing the Scaling Results
