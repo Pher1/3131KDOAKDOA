@@ -98,6 +98,14 @@ The quantitative results of this comparison are summarized in the table below:
 
 *(Note: Values are reported as Mean / 95% CI [Lower, Upper])*
 
+### Visualizing the $O(\sqrt{T})$ Regret Scaling
+
+To further illustrate the effectiveness of our fine-tuned OLE algorithm, the figure below visually verifies its alignment with the theoretical expectations. 
+
+<p align="center">
+  <img src="../../figures/synthetic_regret_scaling.jpg" alt="Regret Scaling Plot" width="800">
+</p>
+
 ### Reproducing the Scaling Results
 
 To reproduce the fine-tuned scaling results and the new baselines reported in the table above, you can use the updated `run_synthetic.py` script. 
