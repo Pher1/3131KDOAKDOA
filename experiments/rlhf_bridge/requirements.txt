@@ -1,0 +1,8 @@
+numpy>=1.23
+scipy>=1.9
+scikit-learn>=1.1
+matplotlib>=3.6
+
+# Optional (only needed if running with --encoder sbert):
+# sentence-transformers>=2.2
+# torch>=2.0
