@@ -978,15 +978,15 @@ def regret_stats(cfg: SimConfig, seeds: List[int], sim_fn=simulate) -> Tuple[flo
 
 def task_scaling(root: str, outdir: str, cfg: SimConfig, seeds: List[int]) -> None:
     ensure_dir(outdir)
-    cfg.eta0 = 1.0
-    cfg.kappa = 3
-    cfg.beta = 0.25
-    cfg.m = 64
     cfg.T = 8000
-
+    # fine tuning the parameter for scaling
+    if cfg.method == "ole":
+        cfg.m = 64
+        cfg.eta0 = 1.0
+        cfg.kappa = 3
+        cfg.beta = 0.25
     crs = [simulate(s, cfg) for s in seeds]
     crs = np.stack(crs, axis=0)  # (S,T)
-
     t = np.arange(1, cfg.T + 1)
     mean = crs.mean(axis=0)
     ddof = 1 if crs.shape[0] > 1 else 0
@@ -1559,7 +1559,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--hyperagent_M", type=int, default=10, help="HyperAgent index dimension M")
     p.add_argument("--hyperagent_sigma", type=float, default=0.3, help="HyperAgent perturbation scale")
     p.add_argument("--hyperagent_n_indices", type=int, default=20, help="HyperAgent sample-average batch size")
-    p.add_argument("--hyperagent_prior_scale_mult", type=float, default=0.35,
+    p.add_argument("--hyperagent_prior_scale_mult", type=float, default=0.30,
                     help="HyperAgent prior uncertainty scale multiplier")
 
     # HyperAgent+OLE hybrid CLI args
